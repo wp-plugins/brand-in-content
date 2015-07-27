@@ -21,14 +21,13 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Where can I find the setting after activate the plugin =
 
-An answer to that question.
+Go to Settings -> Brand In Content
 
-= What about foo bar? =
+== Screenshots ==
 
-Answer to foo bar dilemma.
-
+1. This screen shot description the plugin settings.
 
 == Changelog ==
 
