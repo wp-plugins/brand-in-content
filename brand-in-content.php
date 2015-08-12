@@ -7,9 +7,9 @@
 Plugin Name: brand-in-content
 Plugin URI: http://wordpress.org/plugins/brand-in-content
 Description: Replace your Brand name with Image Logo or custom style in WordPress Content.
-Author: Mohammed J. AlBanna
 Version: 1.0
-Author URI: Eng.Banna1@Gmail.com
+Author: AboZain, Mohammed J. AlBanna
+Author URI: https://profiles.wordpress.org/abozain
 */
 
 add_action( 'admin_menu', 'bic_reg_menu' );
