@@ -11,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 A simple, lightweight WordPress plugin replace your Brand name with Image Logo or custom style in WordPress Content
 
 == Description ==
+Branding is a key element for any site owner. Whether you own a large company, or are one person blogging, your brand is your identity.
 Brand In Content is a simple plugin gives you the ability to replace your Brand name with Image Logo or custom style in WordPress Content.
 
 == Installation ==
@@ -27,7 +28,8 @@ Go to Settings -> Brand In Content
 
 == Screenshots ==
 
-1. This screen shot description the plugin settings.
+1. This screen shot description where you find the plugin settings.
+2. This screen shot description the plugin settings.
 
 == Changelog ==
 

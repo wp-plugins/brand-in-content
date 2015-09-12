@@ -4,7 +4,7 @@
  * @version 1.0
  */
 /*
-Plugin Name: brand-in-content
+Plugin Name: Brand In Content
 Plugin URI: http://wordpress.org/plugins/brand-in-content
 Description: Replace your Brand name with Image Logo or custom style in WordPress Content.
 Version: 1.0
@@ -15,8 +15,20 @@ Author URI: https://profiles.wordpress.org/abozain
 add_action( 'admin_menu', 'bic_reg_menu' );
 
 function bic_reg_menu(){
-	add_options_page( 'Brand In Content', 'Brand In Content', 'administrator', 'brand-in-content', 'bic_BrandInContent'); 
+	add_options_page( __('Brand In Content', 'BrandInContent'), __('Brand In Content', 'BrandInContent'), 'administrator', 'brand-in-content', 'bic_BrandInContent'); 
 }
+
+//////////////////////////
+# Load plugin text domain
+add_action( 'init', 'bic_plugin_textdomain' );
+# Text domain for translations
+function bic_plugin_textdomain() {
+    $domain = 'BrandInContent';
+    $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+    load_textdomain( $domain, WP_LANG_DIR.'/'.$domain.'/'.$domain.'-'.$locale.'.mo' );
+    load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
+}
+//////////////////////////
 
 function bic_BrandInContent(){
 
@@ -38,7 +50,7 @@ function bic_BrandInContent(){
   background-color: white;
   height: 15px;
   width: 95%;
-  padding: 20px;">Saved Successfully</h2>';
+  padding: 20px;">'.__('Saved Successfully', 'BrandInContent').'</h2>';
 	}else{
 		$data =  get_option('brand_in_content'); 
 		//print_r($data);
@@ -53,20 +65,20 @@ function bic_BrandInContent(){
 	?>
         <div class="wrap">
             <?php screen_icon('edit-pages'); ?>
-			<h2>Brand In Content</h2>
-            <h4>Replace your Brand name with Image Logo or custom style in WordPress Content</h4>
+			<h2><?php _e('Brand In Content', 'BrandInContent') ?></h2>
+            <h4><?php _e('Replace your Brand name with Image Logo or custom style in WordPress Content', 'BrandInContent') ?></h4>
             <form method="post" action="">
 				<?php settings_fields( 'disable-settings-group' ); ?>
             	<?php do_settings_sections( 'disable-settings-group' ); ?>
 			<br/>
 			<table>	
 			<tr>
-				<td><label> Find Text </label></td>
+				<td><label> <?php _e('Find Text', 'BrandInContent') ?> </label></td>
 				<td><input id="brand_name" type="text" size="30" name="brand_name" value="<?php echo $brand_name ?>" /></td>
 				<td> </td>
 			</tr>
 			<tr>
-				<td><label> Upload Image </label></td>
+				<td><label> <?php _e('Upload Image', 'BrandInContent') ?> </label></td>
 				<td>
 					<input id="image_url" type="text" size="30" name="image_url" value="<?php echo $image_url ?>" /><br/>
 					<input id="image_url_button" class="button" type="button" value="Upload Image" />	
@@ -74,27 +86,27 @@ function bic_BrandInContent(){
 				<td> </td>
 			</tr>
 			<tr>
-				<td><label> Height </label></td>
+				<td><label> <?php _e('Height', 'BrandInContent') ?> </label></td>
 				<td><input id="height" type="text" size="30" name="height" value="<?php echo $height ?>" maxlength="5" /> </td>
 				<td> </td>
 			</tr>
 			<tr>
-				<td><label> Width </label></td>
+				<td><label> <?php _e('Width', 'BrandInContent') ?> </label></td>
 				<td><input id="width" type="text" size="30" name="width" value="<?php echo $width ?>" maxlength="5" /> </td>
 				<td> </td>
 			</tr>
 			<tr>
-				<td><label> Title </label></td>
+				<td><label> <?php _e('Title', 'BrandInContent') ?> </label></td>
 				<td><input id="title" type="text" size="30" name="title" value="<?php echo $title ?>" maxlength="100" /> </td>
 				<td> </td>
 			</tr>
 			<tr>
-				<td><label> Alt </label></td>
+				<td><label> <?php _e('Alt', 'BrandInContent') ?> </label></td>
 				<td><input id="alt" type="text" size="30" name="alt" value="<?php echo $alt ?>" maxlength="100" /> </td>
 				<td> </td>
 			</tr>
 			<tr>
-				<td><label> Position from top </label></td>
+				<td><label> <?php _e('Position from top', 'BrandInContent') ?> </label></td>
 				<td><input id="position_from_top" type="text" size="30" name="position_from_top" value="<?php echo $position_from_top ?>" maxlength="5" /> </td>
 				<td> </td>
 			</tr>
@@ -104,8 +116,8 @@ function bic_BrandInContent(){
         </div>	
 		
 		<br/>
-		<h3>Preview Image</h3>
-		This is preview <img src="<?php echo $image_url ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $alt ?>" title="<?php echo $title ?>" style="display: inline-block;position: relative;top: <?php echo $position_from_top ?>;}"   > how the image will apear in your site
+		<h3><?php _e('Preview Image', 'BrandInContent') ?></h3>
+		<?php _e('This is preview', 'BrandInContent') ?> <img src="<?php echo $image_url ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $alt ?>" title="<?php echo $title ?>" style="display: inline-block;position: relative;top: <?php echo $position_from_top ?>;}"   > <?php _e('how the image will apear in your site', 'BrandInContent') ?>
 		
 
 		
