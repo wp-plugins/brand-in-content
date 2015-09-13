@@ -35,3 +35,5 @@ Go to Settings -> Brand In Content
 
 = 1.0 =
 * First version.
+= 1.1 =
+* Translation Support.
